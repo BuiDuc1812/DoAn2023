@@ -1,0 +1,66 @@
+.home {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.home:hover {
+    color: #d09f11;
+}
+
+.select {
+    margin-right: 10px;
+    width: 283px;
+    height: 39px;
+    padding: 0 10px;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.input-category {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    width: 265px;
+    height: 39px;
+    padding: 0 10px;
+}
+
+.input-category_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 39px;
+    background-color: #d09f11;
+}
+
+.category_link {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.category_link:hover {
+    color: #d09f11;
+}
+
+.product-title {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.product-title:hover {
+    color: #d09f11;
+}
+
+.product-sofa-table-tivi {
+    width: 75%;
+}
+
+@media (max-width: 1113px) {
+    .product-sofa-table-tivi {
+        width: 100%;
+    }
+    .select {
+        width: 111%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
