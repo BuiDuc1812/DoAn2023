@@ -211,7 +211,7 @@
 
                             <div class="row large-columns-4 medium-columns-4 small-columns-2 row-normal">
 
-{{-- 
+
                                 @foreach ($product as $value)
                                 <div class="col" data-animate="bounceInRight">
                                     <div class="col-inner">
@@ -258,7 +258,7 @@
                                     </div><!-- .col-inner -->
                                 </div><!-- col -->
 
-                                @endforeach --}}
+                                @endforeach
                                
 
                             </div>
@@ -587,8 +587,8 @@
 
                             <div class="row large-columns-4 medium-columns-4 small-columns-2 row-normal">
 
-{{-- 
-                                @foreach ($products as $value)
+
+                                {{-- @foreach ($products as $value)
                                 <div class="col" data-animate="bounceInRight">
                                     <div class="col-inner">
 

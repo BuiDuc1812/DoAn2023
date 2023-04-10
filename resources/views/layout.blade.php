@@ -588,7 +588,7 @@
         }
 
         .nav>li>a {
-            font-family: "Montserrat", sans-serif;
+            font-family: "Alaska VAR";
         }
 
         .nav>li>a {
