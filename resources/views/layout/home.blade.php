@@ -588,7 +588,7 @@
                             <div class="row large-columns-4 medium-columns-4 small-columns-2 row-normal">
 
 
-                                {{-- @foreach ($products as $value)
+                                @foreach ($products as $value)
                                 <div class="col" data-animate="bounceInRight">
                                     <div class="col-inner">
 
@@ -629,7 +629,7 @@
                                         </div><!-- box -->
                                     </div><!-- .col-inner -->
                                 </div><!-- col -->
-                                @endforeach --}}
+                                @endforeach
                               
 
 
@@ -749,7 +749,7 @@
 
                             <div class="row large-columns-4 medium-columns-4 small-columns-2 row-normal">
 
-                                    {{-- @foreach ($pro as $value)
+                                    @foreach ($pro as $value)
                                     <div class="col" data-animate="bounceInRight">
                                         <div class="col-inner">
     
@@ -790,7 +790,7 @@
                                             </div><!-- box -->
                                         </div><!-- .col-inner -->
                                     </div><!-- col -->
-                                    @endforeach --}}
+                                    @endforeach
 
                                
 
