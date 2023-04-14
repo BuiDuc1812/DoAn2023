@@ -7978,7 +7978,3 @@ readers do not read off random characters that represent icons */
     font-style: italic;
     font-weight: 400;
   }
-
-  body {
-    font-family: 'Alaska VAR' !important;
-  }

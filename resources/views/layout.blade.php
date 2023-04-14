@@ -15,7 +15,7 @@
 
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="xmlrpc.php" />
-
+    <link rel="stylesheet" href="template/layout/css/font.css">
     <script>
         (function(html) {
             html.className = html.className.replace(/\bno-js\b/, 'js')
@@ -588,7 +588,7 @@
         }
 
         .nav>li>a {
-            font-family: "Alaska VAR";
+            font-family: "Roboto";
         }
 
         .nav>li>a {

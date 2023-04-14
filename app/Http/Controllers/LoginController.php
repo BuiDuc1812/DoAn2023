@@ -111,7 +111,7 @@ class LoginController extends Controller
             if( Auth::attempt(['email' => $email, 'password' =>$password, 'status' => 1])) {
                 // Kiểm tra đúng email và mật khẩu sẽ chuyển trang
                 session(['account' => Auth::user()]);
-                Session::flash('success', 'Đăng nhập thành công!');
+                // Session::flash('success', 'Đăng nhập thành công!');
                 return redirect('/');
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi
