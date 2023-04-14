@@ -158,6 +158,14 @@
                                                 <td>
                                                     <a href="{{route('order.edit',$item)}}" class="btn btn-primary">Sửa</a>
                                                 </td>
+                                                <td>
+                                                    <form action="{{ route('order.destroy', $item) }}" method="POST"
+                                                        onsubmit="return confirm('Bạn thực sự muốn xóa đơn hàng này?')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>

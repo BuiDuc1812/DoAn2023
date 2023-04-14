@@ -58,19 +58,15 @@
                                         <td>{{ $value->created_at }}</td>
                                         <td>{{ $value->updated_at }}</td>
                                         <td>
-                                            @if ($value->status == 0)
-                                                <a href="{{ route('user.edit', $value) }}" class="btn btn-primary">Sửa</a>
-                                            @endif
+                                            <a href="{{ route('user.edit', $value) }}" class="btn btn-primary">Sửa</a>
                                         </td>
                                         <td>
-                                            @if ($value->status == 0)
-                                                <form action="{{ route('user.destroy', $value) }}" method="POST"
-                                                    onsubmit="return confirm('Bạn thực sự muốn xóa người dùng này?')">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Xóa</button>
-                                                </form>
-                                            @endif
+                                            <form action="{{ route('user.destroy', $value) }}" method="POST"
+                                                onsubmit="return confirm('Bạn thực sự muốn xóa người dùng này?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Xóa</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
