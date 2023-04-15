@@ -61,7 +61,7 @@
                             <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
                                 href="#usersExample">
                                 <span class="sidenav-mini-icon"> U </span>
-                                <span class="sidenav-normal  ms-2  ps-1"> Người dùng và <br> người quàn trị <b class="caret"></b></span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Quản lí người dùng <b class="caret"></b></span>
                             </a>
                             <div class="collapse " id="usersExample">
                                 <ul class="nav nav-sm flex-column">
