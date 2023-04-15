@@ -117,6 +117,7 @@
                                             <li class="ux_global_tab_tab  ">
                                                 <a href="#tab-ux_global_tab">Chính sách bảo hành</a>
                                             </li>
+            
                                         </ul>
                                         <div class="tab-panels">
 
@@ -147,9 +148,7 @@
                                                         <div id="review_form" class="col-inner">
                                                             <div class="review-form-inner has-border">
                                                                 <div id="respond" class="comment-respond">
-                                                                    <h3 id="reply-title" class="comment-reply-title">Hãy
-                                                                        là người đầu tiên nhận xét &ldquo;Ghế sofa
-                                                                        SF02&rdquo; <small><a rel="nofollow"
+                                                                    <h3 id="reply-title" class="comment-reply-title">Đánh giá sản phẩm<small><a rel="nofollow"
                                                                                 id="cancel-comment-reply-link"
                                                                                 href="index.html#respond"
                                                                                 style="display:none;">Hủy</a></small></h3>
@@ -175,20 +174,6 @@
                                                                                     class="required">*</span></label>
                                                                             <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea>
                                                                         </p>
-                                                                        <p class="comment-form-author"><label
-                                                                                for="author">Tên <span
-                                                                                    class="required">*</span></label>
-                                                                            <input id="author" name="author"
-                                                                                type="text" value=""
-                                                                                size="30" aria-required="true"
-                                                                                required /></p>
-                                                                        <p class="comment-form-email"><label
-                                                                                for="email">Email <span
-                                                                                    class="required">*</span></label>
-                                                                            <input id="email" name="email"
-                                                                                type="email" value=""
-                                                                                size="30" aria-required="true"
-                                                                                required /></p>
                                                                         <p class="form-submit"><input name="submit"
                                                                                 type="submit" id="submit"
                                                                                 class="submit" value="Gửi đi" /> <input
