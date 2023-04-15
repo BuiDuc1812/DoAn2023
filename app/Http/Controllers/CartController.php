@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\User;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -97,7 +98,7 @@ class CartController extends Controller
                 session(['cart' => null]);
                 return redirect()->route('home')->with('success','Đặt hàng thành công');
         } catch (\Throwable $th) {
-            dd($th);
+            throw new Exception($th);
         }
     }
 }

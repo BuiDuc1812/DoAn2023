@@ -159,6 +159,9 @@
                                                     <a href="{{route('order.edit',$item)}}" class="btn btn-primary">Sửa</a>
                                                 </td>
                                                 <td>
+                                                    <a href="{{ url('print_pdf',$item->id) }}" class="btn">Print PDF</a>
+                                                </td>
+                                                <td>
                                                     <form action="{{ route('order.destroy', $item) }}" method="POST"
                                                         onsubmit="return confirm('Bạn thực sự muốn xóa đơn hàng này?')">
                                                         @csrf

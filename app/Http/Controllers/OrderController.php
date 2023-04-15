@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
+use PDF;
 
 use function Ramsey\Uuid\v1;
 
@@ -90,5 +91,12 @@ class OrderController extends Controller
     {
         $order = Order::find($id)->delete();
         return redirect()->back()->with('success','Xóa thành công');
+    }
+
+    public function print_pdf($id){
+        $orders = Order::find($id);
+        $detail = OrderDetail::where('order_id',$id)->get();
+        $pdf=PDF::loadView('admin.cart.pdf',compact('orders','detail'));
+        return $pdf->download('order_details.pdf');
     }
 }

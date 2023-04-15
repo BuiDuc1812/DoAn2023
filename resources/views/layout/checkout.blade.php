@@ -41,11 +41,11 @@
                                 @csrf
                                 <p class="form-row form-row-first">
                                     <label for="username">Tên đăng nhập hoặc email <span class="required">*</span></label>
-                                    <input type="text" class="input-text" name="email" value="" id="username" />
+                                    <input required type="text" class="input-text" name="email" value="" id="username" />
                                 </p>
                                 <p class="form-row form-row-last">
                                     <label for="password">Mật khẩu <span class="required">*</span></label>
-                                    <input class="input-text" type="password" name="password" id="password" />
+                                    <input required class="input-text" type="password" name="password" id="password" />
                                 </p>
                                 <div class="clear"></div>
                                 <p class="form-row">
@@ -69,12 +69,12 @@
                                                             for="billing_city" class="">Họ tên <abbr
                                                             class="required" title="bắt buộc">*</abbr></label>
                                                             @if (session('account'))
-                                                                <input
+                                                                <input required
                                                                 type="text" class="input-text " name="name"
                                                                 id="" placeholder="Họ tên" value="{{session('account')->name}}"
                                                                 autocomplete="address-level2" />
                                                             @else
-                                                                <input
+                                                                <input required
                                                                 type="text" class="input-text " name="name"
                                                                 id="" placeholder="Họ tên" value=""
                                                                 autocomplete="address-level2" />
@@ -84,7 +84,7 @@
                                                         <p class="form-row form-row-wide address-field validate-required"
                                                             id="billing_city_field" data-priority="70"><label
                                                                 for="billing_city" class="">Địa chỉ <abbr
-                                                                    class="required" title="bắt buộc">*</abbr></label><input
+                                                                    class="required" title="bắt buộc">*</abbr></label><input required
                                                                 type="text" class="input-text " name="address"
                                                                 id="billing_city" placeholder="Địa chỉ nhà, căn hộ, toà nhà,.." value=""
                                                                 autocomplete="address-level2" /></p>
@@ -92,7 +92,7 @@
                                                             id="billing_city_field" data-priority="70"><label
                                                                 for="billing_city" class="">Số điện thoại <abbr
                                                                     class="required"
-                                                                    title="bắt buộc">*</abbr></label><input type="text"
+                                                                    title="bắt buộc">*</abbr></label><input required type="text"
                                                                 class="input-text " name="phone" id="billing_city"
                                                                 placeholder="Số điện thoại" value=""
                                                                 autocomplete="address-level2" />
@@ -103,12 +103,12 @@
                                                                 class="required"
                                                                 title="bắt buộc">*</abbr></label>
                                                                 @if (session('account'))
-                                                                    <input type="text"
+                                                                    <input required type="text"
                                                                     class="input-text " name="email" id="billing_city"
                                                                     placeholder="Email" value="{{session('account')->email}}"
                                                                     autocomplete="address-level2" />
                                                                 @else
-                                                                    <input type="text"
+                                                                    <input required type="text"
                                                                     class="input-text " name="email" id="billing_city"
                                                                     placeholder="Email" value=""
                                                                     autocomplete="address-level2" />
@@ -179,7 +179,7 @@
                                                             <tr class="shipping">
                                                                 <th>Giao hàng 1</th>
                                                                 <td data-title="Giao hàng 1">
-                                                                    Giao hàng miễn phí <input type="hidden"
+                                                                    Giao hàng miễn phí <input required type="hidden"
                                                                         name="shipping_method[0]" data-index="0"
                                                                         id="shipping_method_0" value="free_shipping:1"
                                                                         class="shipping_method">
@@ -224,8 +224,8 @@
                                                                 name="woocommerce_checkout_place_order" id="place_order"
                                                                 value="Đặt hàng" data-value="Đặt hàng">Đặt hàng</button>
 
-                                                            <input type="hidden" id="_wpnonce" name="_wpnonce"
-                                                                value="8a5a1064a6"><input type="hidden"
+                                                            <input required type="hidden" id="_wpnonce" name="_wpnonce"
+                                                                value="8a5a1064a6"><input required type="hidden"
                                                                 name="_wp_http_referer"
                                                                 value="/noithatbanghe/?wc-ajax=update_order_review">
                                                         </div>
