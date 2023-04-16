@@ -54,6 +54,20 @@
         .async-hide {
             opacity: 0 !important
         }
+        tr {
+            vertical-align: middle;
+        }
+
+        .icon-search {
+            padding: 0;
+            margin: 0;
+            width: 44px;
+        }
+
+        .grp-search {
+            display: flex;
+            align-items: center;
+        }
     </style>
     <script>
         (function(a, s, y, n, c, h, i, d, e) {

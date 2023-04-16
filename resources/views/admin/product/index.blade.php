@@ -66,10 +66,10 @@
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                     <div class="input-group input-group-outline">
                         <form action="">
-                            <div class="input-group">
+                            <div class="input-group grp-search">
                                 <input type="search" class="form-control form-control-lg" placeholder="Nhập từ khóa tìm kiếm" name="key">
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-lg btn-default">
+                                    <button type="submit" class="btn btn-lg btn-default icon-search">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
@@ -117,6 +117,9 @@
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Xóa</button>
                                             </form>
+                                        </td>
+                                        <td>
+                                            <a class="btn" href="{{ route('review', $value) }}">đánh giá</a>
                                         </td>
                                     </tr>
                                 @endforeach

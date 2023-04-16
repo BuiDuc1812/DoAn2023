@@ -63,16 +63,16 @@
         </nav>
     </div>
 </nav>
-    <div class="container" style="margin: 50px">
+    <div class="container">
         <div>
             <div class="search"
                 style="display: flex;flex-direction: row-reverse;align-items: center;justify-content: space-between;">
                 <form action="">
-                    <div class="input-group">
+                    <div class="input-group grp-search">
                         <input type="search" class="form-control form-control-lg" placeholder="Nhập từ khóa tìm kiếm"
                             name="key">
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-lg btn-default">
+                            <button type="submit" class="btn btn-lg btn-default icon-search">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
@@ -91,6 +91,7 @@
                             <th>Tên danh mục</th>
                             <th>Trạng thái</th>
                             <th></th>
+                            <th></th>
                         </tr>
                         </tr>
                     </thead>
@@ -102,7 +103,8 @@
                                 <td>{{ $data->status ? 'Hiện' : 'Ẩn' }}</td>
                                 <td>
                                     <a href="{{ route('category.edit', $data) }}" class="btn btn-primary">Sửa</a>
-
+                                </td>
+                                <td>
                                     <form action="{{ route('category.destroy', $data) }}" method="POST">
                                         @method('DELETE')
                                         @csrf

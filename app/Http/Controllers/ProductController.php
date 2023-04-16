@@ -7,6 +7,9 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use App\Models\review;
 
 class ProductController extends Controller
 {
@@ -122,5 +125,29 @@ class ProductController extends Controller
          } catch (\Throwable $th) {
              //throw $th;
          }
+    }
+    public function review($id, Request $request){
+        if((Auth::check()) && (Auth::user()->status == 1)){
+            $user_id = Auth::user()->id;
+        }
+        $review = new review();
+        $review->user_id = $user_id;
+        $review->product_id = $id;
+        $review->rating = $request->rating;
+        $review->desciption = $request->comment;
+        $review->save();
+        return redirect()->back();
+    }
+    
+    public function showreview($id){
+        $review = review::where('product_id',$id)->get();
+        $name_product = Product::where('id',$id)->first()->name;
+        return view('admin/product.review',compact('review','name_product'));
+    }
+
+    public function deletereview($id){
+        $review = review::find($id);
+        $review->delete();
+        return redirect()->back();
     }
 }

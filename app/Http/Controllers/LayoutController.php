@@ -9,6 +9,8 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\review;
+
 
 class LayoutController extends Controller
 {
@@ -33,9 +35,12 @@ class LayoutController extends Controller
     }
     public function detail($id)
     {
+
+        $review = review::where('product_id',$id)->get();
+        $name_product = Product::where('id',$id)->first()->name;
         $pro = Product::find($id);
         $product = Product::where('category_id',$pro->category_id)->get();
-        return view('layout.detail',compact('pro','product'));
+        return view('layout.detail',compact('pro','product','review','name_product'));
     }
     public function category($slug)
     {
@@ -44,4 +49,5 @@ class LayoutController extends Controller
         $ramdomProducts = Product::inRandomOrder()->limit(6)->get();
         return view('layout.category', compact('product','ramdomProducts'));
     }
+    
 }

@@ -112,7 +112,7 @@
                                                 <a href="#tab-description">Mô tả</a>
                                             </li>
                                             <li class="reviews_tab  ">
-                                                <a href="#tab-reviews">Đánh giá (0)</a>
+                                                <a href="#tab-reviews">Đánh giá</a>
                                             </li>
                                             <li class="ux_global_tab_tab  ">
                                                 <a href="#tab-ux_global_tab">Chính sách bảo hành</a>
@@ -137,12 +137,21 @@
                                                 <div class="row" id="reviews">
                                                     <div class="col large-12" id="comments">
                                                         <h3 class="normal">Đánh giá</h3>
-
-
-                                                        <p class="woocommerce-noreviews">Chưa có đánh giá nào.</p>
-
+                                                        @foreach ($review as $item)
+                                                        <?php
+                                                        $user = App\Models\User::where('id',$item->user_id)->first();
+                                                        $name = $user->name;
+                                                        ?>
+                                           
+                                                            <div class="d-flex align-items-center">
+                                                                <span>{{$name}}</span>
+                                                            </div>
+                                    
+                                            
+                                                
+                                                        @endforeach
                                                     </div>
-
+                                                
 
                                                     <div id="review_form_wrapper" class="large-12 col">
                                                         <div id="review_form" class="col-inner">
@@ -153,9 +162,10 @@
                                                                                 href="index.html#respond"
                                                                                 style="display:none;">Hủy</a></small></h3>
                                                                     <form
-                                                                        action="wp-comments-post.php"
+                                                                        action="{{route('product.review', $pro->id)}}"
                                                                         method="post" id="commentform"
                                                                         class="comment-form" novalidate>
+                                                                        @csrf
                                                                         <div class="comment-form-rating"><label
                                                                                 for="rating">Đánh giá của
                                                                                 bạn</label><select name="rating"

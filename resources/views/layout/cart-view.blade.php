@@ -109,7 +109,7 @@
 
                                     </div>
 
-                                    <div class="cart-collaterals large-5 col pb-0">
+                                    <div class="cart-collaterals large-5 col pb-0 checkout-cart">
 
                                         <div class="cart-sidebar col-inner ">
                                             <div class="cart_totals ">
