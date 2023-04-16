@@ -37,10 +37,10 @@ class LayoutController extends Controller
     {
 
         $review = review::where('product_id',$id)->get();
-        $name_product = Product::where('id',$id)->first()->name;
         $pro = Product::find($id);
         $product = Product::where('category_id',$pro->category_id)->get();
-        return view('layout.detail',compact('pro','product','review','name_product'));
+        $ramdomProducts = Product::inRandomOrder()->limit(6)->get();
+        return view('layout.detail',compact('pro','product','review','ramdomProducts'));
     }
     public function category($slug)
     {

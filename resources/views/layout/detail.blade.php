@@ -146,9 +146,24 @@
                                                             <div class="d-flex align-items-center">
                                                                 <span>{{$name}}</span>
                                                             </div>
-                                    
-                                            
-                                                
+                                                            <div class="star">
+                                                            @for ($i = 1; $i <= $item->rating; $i++)
+                                                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                                    viewBox="0 0 543 516.4" style="enable-background:new 0 0 543 516.4;" xml:space="preserve">
+                                                            <style type="text/css">
+                                                                .st0{fill:#FFC901;}
+                                                            </style>
+                                                            <g>
+                                                                <g>
+                                                                    <polygon class="st0" points="271.5,0 355.4,170 543,197.3 407.2,329.6 439.3,516.4 271.5,428.2 103.7,516.4 135.8,329.6 0,197.3 
+                                                                        187.6,170 		"/>
+                                                                </g>
+                                                            </g>
+                                                            </svg>
+                                                            @endfor
+                                                            </div>
+                                                            <span><b>Ngày đánh giá :</b> {{ $item->created_at }}</span>
+                                                            <p>{{ $item->desciption }}</p>
                                                         @endforeach
                                                     </div>
                                                 
@@ -204,16 +219,12 @@
 
 
                                             <div class="panel entry-content " id="tab-ux_global_tab">
-                                                <p>Chính sách bảo hành của riêng mỗi hãng:</p>
-                                                <p>CASIO: Bảo hành chính hãng máy 1 năm, pin 1,5 năm</p>
-                                                <p>CITIZEN: Bảo hành chính hãng toàn cầu máy 1 năm, pin 1 năm</p>
-                                                <p>SEIKO: Bảo hành chính hãng toàn cầu máy 1 năm, pin 1 năm</p>
-                                                <p>ORIENT: Bảo hành chính hãng toàn cầu máy 1 năm, pin 1 năm</p>
-                                                <p>OP: Bảo hành chính hãng máy 2 năm, pin 1 năm</p>
-                                                <p>RHYTHM:&nbsp;Bảo hành chính hãng máy 1 năm, pin 1 năm</p>
-                                                <p>OGIVAL:&nbsp;Bảo hành chính hãng máy 2 năm, pin 1 năm</p>
-                                                <p>ELLE:&nbsp;Bảo hành chính hãng máy 2 năm, pin 2 năm</p>
-                                                <p>TISSOT:&nbsp;Bảo hành chính hãng máy 2 năm, pin 1 năm</p>
+                                                LYN Concept chỉ nhận bảo hành đối với các sản phẩm do chúng tôi trực tiếp phân phối – sản xuất và còn trong thời hạn bảo hành. Việc bảo hành sẽ tùy theo trường hợp cụ thể mà chúng tôi sẽ thay thế mới hoàn toàn hoặc giới hạn việc sửa chữa, thay thế phụ tùng.
+                                                Chúng tôi chỉ bảo hành đối với những lỗi gây ra do nhà sản xuất trong quá trình sản xuất như lỗi kỹ thuật.
+                                                Thời hạn bảo hành theo phiếu bảo hành do LYN Concept cung cấp cho Quý khách.
+                                                Thời gian bảo hành đồ nội thất bằng gỗ là 12 tháng, chỉ bảo hành kỹ thuật, không bảo hành gỗ bị hư do mối mọt, vô nước, biến dạng do va đập mạnh, trầy xước do tiếp xúc vật nhọn trong quá trình sử dụng.
+                                                Thời gian bảo hành: 9h-6h00 tất cả các ngày trong tuần  (từ thứ 2 - chủ nhật) Chúng tôi sẽ phản hồi đã tiếp nhận yêu cầu bảo hành của khách hang trong 3 giờ làm việc.Tiến hành bảo hành từ 3-7 ngày làm việc
+                                                Đối với những đơn hàng ở tỉnh Khách hàng sẽ mang sản phẩm trực tiếp đến cửa hàng của LYN Concept tại 68/13 Đào Duy Anh, Phường 9, Quận Phú Nhuận, TP.HCM kèm theo Phiếu Giao Hàng hợp lệ có đóng mộc và chữ ký của công ty để được bảo hành 
                                             </div>
 
                                         </div><!-- .tab-panels -->
@@ -295,7 +306,7 @@
 
                             </div><!-- col large-9 -->
 
-                            <div id="product-sidebar" class="col large-3 hide-for-medium shop-sidebar ">
+                            {{-- <div id="product-sidebar" class="col large-3 hide-for-medium shop-sidebar ">
                                 <aside id="woocommerce_products-2" class="widget woocommerce widget_products"><span
                                         class="widget-title shop-sidebar">Sản phẩm</span>
                                     <div class="is-divider small"></div>
@@ -382,8 +393,45 @@
                                         </li>
                                     </ul>
                                 </aside>
-                            </div><!-- col large-3 -->
-
+                            </div><!-- col large-3 --> --}}
+                            <div class="col large-3 hide-for-medium ">
+                                <div id="shop-sidebar" class="sidebar-inner col-inner">
+                                    <aside id="nav_menu-2" class="widget widget_nav_menu"><span class="widget-title shop-sidebar">Danh mục sản phẩm</span>
+                                        <div class="is-divider small"></div>
+                                        <div class="menu-danh-muc-san-pham-vertical-menu-container">
+                                            <ul id="menu-danh-muc-san-pham-vertical-menu" class="menu">
+                                               
+                                                @foreach ($category as $value)
+                                                <li id="menu-item-488"class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-488">
+                                                    <a href="{{route('category',['slug'=> $value->slug])}}" class="menu-image-title-after">
+                                                        <span class="menu-image-title">{{$value->name}}</span>
+                                                    </a>
+                                                </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </aside>
+                                    <aside id="woocommerce_products-3" class="widget woocommerce widget_products"><span
+                                            class="widget-title shop-sidebar">Sản phẩm</span>
+                                        <div class="is-divider small"></div>
+                                        <ul class="product_list_widget">
+                                           
+                                           @foreach ( $ramdomProducts as $item)
+                                           <li>
+                                            <a href="{{route('detail',['id'=> $item->id])}}">
+                                                <img width="300" height="300" src="{{url('uploads')}}/{{$item->image}}"
+                                                    class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+                                                    alt=""
+                                                    /> <span class="product-title">{{$item->name}}</span>
+                                            </a>
+                                            <span class="woocommerce-Price-amount amount">{{number_format($item->price)}}&nbsp;<span
+                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></span>
+                                        </li>
+                                           @endforeach
+                                        </ul>
+                                    </aside>
+                                </div><!-- .sidebar-inner -->
+                            </div>
                         </div><!-- .row -->
                     </div><!-- .product-main -->
                 </div>

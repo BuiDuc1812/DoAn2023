@@ -703,6 +703,15 @@
         .error {
             color: red;
         }
+
+        .star {
+            display: flex;
+
+        }
+
+        .star svg{
+            width: 20px !important;
+        }
     </style>
 </head>
 
