@@ -80,7 +80,13 @@
                                             </td> 
                                             <td>
                                                 @if ($item->status == 0 || $item->status == 1 )
-                                                    <a href="{{route('order.detail',$item->id)}}" class="btn">Huỷ đơn dặt</a>
+                                                
+                                                    <form style="margin: 0"  action="{{ route('order.destroy', $item) }}" method="POST"
+                                                    onsubmit="return confirm('Bạn thực sự muốn xóa đơn hàng này?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button style="background-color: #ccc; margin:0" type="submit" class="">Xóa</button>
+                                                </form>
                                                 @endif
                                                 
                                             </td>                              

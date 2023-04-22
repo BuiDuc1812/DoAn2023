@@ -97,6 +97,13 @@ class OrderController extends Controller
         return redirect()->back()->with('success','Xóa thành công');
     }
 
+    public function destroydetails($productId, $orderId)
+    {
+
+        $order_details = OrderDetail::where('order_id', $productId)->where('product_id', $orderId)->delete();
+        return redirect()->back()->with('success', 'Xoá sản phẩm khỏi đơn hàng thành công.');
+    }
+
     public function print_pdf($id){
         $orders = Order::find($id);
         $detail = OrderDetail::where('order_id',$id)->get();

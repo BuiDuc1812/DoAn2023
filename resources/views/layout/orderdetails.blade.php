@@ -1,6 +1,15 @@
 @extends('layout')
 @section('title', 'Quản lí tài khoản')
 @section('layout')
+@if ( Session::has('success') )
+	<div class="alert success alert-dismissible" id="mess" role="alert">
+		<strong>{{ Session::get('success') }}</strong>
+		<button type="button" class="close" data-dismiss="alert" onclick="removeMess()"  aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			<span class="sr-only">Close</span>
+		</button>
+	</div>
+@endif
 <section class="col-lg-12 connectedSortable">
     <div class="container-fluid py-4">
         <div class="row">
@@ -35,6 +44,7 @@
                                                 <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Tổng cộng</th>
+                                                <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -71,6 +81,11 @@
                                                             class="text-dark text-xs">{{ number_format($item->subtotal) }}đ</span>
                                                     </span>
                                                 </td>
+                                                <td>
+                                                  
+                                                    <a href="{{ route('customer.orderdelete',['productId' => $item->product->id, 'orderId' => $orders->id])}}">Xoá sản phẩm</a>
+                                            
+                                                </td>  
                                             </tr>
                                         @endforeach
 
