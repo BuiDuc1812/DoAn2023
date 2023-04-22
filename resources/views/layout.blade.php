@@ -788,6 +788,9 @@
                                         <li>
                                             <a href="{{route('customer.account')}}" class="nav-top-link nav-top-not-logged-in">Quản lí tài khoản</a>
                                         </li>
+                                        <li>
+                                            <a href="{{route('customer.order')}}" class="nav-top-link nav-top-not-logged-in">Quản lí đơn hàng</a>
+                                        </li>
                                     </ul>
                                         
                                     @else

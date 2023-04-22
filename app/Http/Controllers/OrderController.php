@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
@@ -98,5 +98,13 @@ class OrderController extends Controller
         $detail = OrderDetail::where('order_id',$id)->get();
         $pdf=PDF::loadView('admin.cart.pdf',compact('orders','detail'));
         return $pdf->download('order_details.pdf');
+    }
+
+    public function showorder(){
+        if((Auth::check()) && (Auth::user()->status == 1)){
+            $user_id = Auth::user()->id;
+        }
+        $order = Order::where('user_id', $user_id)->get();
+        return view('layout.order', compact('order'));
     }
 }
