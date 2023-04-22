@@ -62,113 +62,25 @@
                 "selectedAttraction": 0.1,
                 "parallax" : 0,
                 "friction": 0.6        }'>
-
-
-                                    <div class="banner has-hover" id="banner-963092860">
-                                        <div class="banner-inner fill">
-                                            <div class="banner-bg fill">
-                                                <div class="bg fill bg-fill "></div>
-
-                                            </div><!-- bg-layers -->
-                                            <div class="banner-layers container">
-                                                <div class="fill banner-link"></div>
-                                                <div id="text-box-317888479"
-                                                    class="text-box banner-layer x5 md-x5 lg-x5 y50 md-y50 lg-y50 res-text">
-                                                    <div class="text dark">
-
-                                                        <div class="text-inner text-left">
-
-                                                            <h2 class="uppercase"><strong>Sofa Set with Lounger</strong>
-                                                            </h2>
-                                                            <h4>Reveal Yourself <strong>THROUGH YOUR CHOICE</strong>
-                                                            </h4>
-                                                            <a href="" target="_self"
-                                                                class="button white is-outline">
-                                                                <span>Mua ngay</span>
-                                                            </a>
-
-                                                        </div>
-                                                    </div><!-- text-box-inner -->
-
-                                                    <style scope="scope">
-                                                        #text-box-317888479 {
-                                                            width: 90%;
-                                                        }
-
-                                                        #text-box-317888479 .text {
-                                                            font-size: 70%;
-                                                        }
-
-
-                                                        @media (min-width:550px) {
-
-                                                            #text-box-317888479 {
-                                                                width: 90%;
-                                                            }
-
-                                                            #text-box-317888479 .text {
-                                                                font-size: 100%;
-                                                            }
-
-                                                        }
-
-
-                                                        @media (min-width:850px) {
-
-                                                            #text-box-317888479 {
-                                                                width: 60%;
-                                                            }
-
-                                                        }
-                                                    </style>
-                                                </div><!-- text-box -->
-
-                                            </div><!-- .banner-layers -->
-                                        </div><!-- .banner-inner -->
-
-                                        <div class="height-fix is-invisible"><img width="1920" height="864"
-                                                src="{{url('template/layout')}}/wp-content/uploads/2018/04/slideshow_1.jpg"
-                                                class="attachment-original size-original" alt=""
-                                                /></div>
-
-                                        <style scope="scope">
-                                            #banner-963092860 .bg.bg-loaded {
-                                                background-image: url(template/layout/wp-content/uploads/2018/04/slideshow_1.jpg);
-                                            }
-                                        </style>
-                                    </div><!-- .banner -->
-
-
-                                    <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_510626392">
-                                        <div class="img-inner dark">
-                                            <img width="1020" height="459"
-                                                src="template/layout/wp-content/uploads/2018/04/198-1024x461.jpg"
-                                                class="attachment-large size-large" alt=""
-                                               />
+                                        @foreach ($banner as $item)
+                                        <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_510626392">
+                                            <div class="img-inner dark">
+                                                <img width="1020" height="459"
+                                                    src="{{url('uploads')}}/{{$item->image_banner}}"
+                                                    class="attachment-large size-large" alt=""
+                                                   />
+                                            </div>
                                         </div>
-
+                                        @endforeach
                                         <style scope="scope">
                                             #image_510626392 {
                                                 width: 100%;
                                             }
                                         </style>
-                                    </div>
-
                                 </div>
-
-                                <div class="loading-spin dark large centered"></div>
-
-                                <style scope="scope">
-                                </style>
                             </div><!-- .ux-slider-wrapper -->
-
-
                         </div>
                     </div>
-
-                    <style scope="scope">
-
-                    </style>
                 </div>
             </div><!-- .section-content -->
 

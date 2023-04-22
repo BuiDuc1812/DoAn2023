@@ -36,21 +36,21 @@
                     <ul class="nav ">
                         <li class="nav-item ">
                             <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                                href="#profileExample">
+                                href="#categoryExample">
                                 <span class="sidenav-mini-icon"> C </span>
                                 <span class="sidenav-normal  ms-2  ps-1"> Quản lý danh mục <b class="caret"></b></span>
                             </a>
-                            <div class="collapse " id="profileExample">
+                            <div class="collapse " id="categoryExample">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link text-white " href="{{ route('category.create') }}">
-                                            <span class="sidenav-mini-icon"> A </span>
+                            
                                             <span class="sidenav-normal  ms-2  ps-1"> Thêm mới danh mục </span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-white " href="{{ route('category.index') }}">
-                                            <span class="sidenav-mini-icon"> L </span>
+                                
                                             <span class="sidenav-normal  ms-2  ps-1"> Danh sách danh mục </span>
                                         </a>
                                     </li>
@@ -67,13 +67,13 @@
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link text-white " href="{{ route('user.create') }}">
-                                            <span class="sidenav-mini-icon"> A </span>
+                                     
                                             <span class="sidenav-normal  ms-2  ps-1"> Thêm mới người dùng và <br>  người quản trị </span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-white " href="{{ route('user.index') }}">
-                                            <span class="sidenav-mini-icon"> L </span>
+                                       
                                             <span class="sidenav-normal  ms-2  ps-1"> Danh sách người dùng và <br>  người quản trị </span>
                                         </a>
                                     </li>
@@ -90,13 +90,13 @@
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link text-white " href="{{ route('product.create') }}">
-                                            <span class="sidenav-mini-icon"> A </span>
+                                  
                                             <span class="sidenav-normal  ms-2  ps-1"> Thêm mới sản phẩm </span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-white " href="{{ route('product.index') }}">
-                                            <span class="sidenav-mini-icon"> L </span>
+                   
                                             <span class="sidenav-normal  ms-2  ps-1"> Danh sách sản phẩm </span>
                                         </a>
                                     </li>
@@ -114,7 +114,7 @@
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link text-white " href="{{ route('order.index') }}">
-                                            <span class="sidenav-mini-icon"> L </span>
+                                
                                             <span class="sidenav-normal  ms-2  ps-1"> Danh sách đơn hàng </span>
                                         </a>
                                     </li>
@@ -122,7 +122,23 @@
                             </div>
                         </li>
 
-
+                        <li class="nav-item ">
+                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
+                                href="#bannerEx">
+                                <span class="sidenav-mini-icon"> U </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Banner cửa hàng<b class="caret"></b></span>
+                            </a>
+                            <div class="collapse " id="bannerEx">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white " href="{{ route('banner.index') }}">
+                                    
+                                            <span class="sidenav-normal  ms-2  ps-1"> Danh sách banner</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
 
                 </li>

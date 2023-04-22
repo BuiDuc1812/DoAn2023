@@ -9,6 +9,7 @@ use App\Http\Controllers\Ordercontroller;
 use App\Http\Controllers\OrderManagerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BannerController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +55,9 @@ Route::post('/admin',[LoginController::class,'store'])->name('login.store');
   Route::get('admin/home/product/review/{id}',[ProductController::class,'showreview'])->name('review');
   Route::post('admin/home/product/review/{id}',[ProductController::class,'deletereview'])->name('deletereview');
   Route::post('detail/{id}',[ProductController::class,'review'])->name('product.review');
+  Route::post('admin/home/banner/create',[BannerController::class,'create'])->name('banner.create');
+  Route::get('admin/home/banner/index',[BannerController::class,'index'])->name('banner.index');
+  Route::get('admin/home/banner/index/{id}',[BannerController::class,'delete'])->name('banner.destroy');
   Route::resource('admin/home/order', Ordercontroller::class);
   Route::get('/print_pdf/{id}', [Ordercontroller::class, 'print_pdf']);
   Route::get('admin/home/cart/detail/{id}',[OrderManagerController::class,'show'])->name('order.detail');

@@ -7,6 +7,7 @@ use App\Models\Blog_cate;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\review;
@@ -19,7 +20,8 @@ class LayoutController extends Controller
        $product = Product::where('category_id',2)->limit(8)->get();
        $products = Product::where('category_id',3)->get();
        $pro = Product::where('category_id',1)->limit(8)->get();
-        return view('layout.home',compact('product','products','pro'));
+       $banner = Banner::all();
+        return view('layout.home',compact('product','products','pro','banner'));
     }
     public function about()
     {
