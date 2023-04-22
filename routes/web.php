@@ -40,6 +40,8 @@ Route::get('news',[LayoutController::class,'news'])->name('news');
 Route::post('/register',[UserController::class,'registerCustomer'])->name('customer.register');
 Route::post('/login',[LoginController::class,'loginCustomer'])->name('customer.login');
 Route::get('/logout',[LoginController::class,'logoutCustomer'])->name('customer.logout');
+Route::get('/account',[UserController::class,'account'])->name('customer.account');
+Route::post('/account/{id}',[UserController::class,'updateaccount'])->name('update.account');
 Route::post('/login/checkout',[LoginController::class,'loginCheckout'])->name('checkout.login');
 Route::get('/logout/checkout',[LoginController::class,'logoutCheckout'])->name('checkout.logout');
 

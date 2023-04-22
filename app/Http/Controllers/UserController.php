@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\AccountValidateRequest;
 use App\Http\Requests\AddAccountValidateRequest;
+use Illuminate\Support\Facades\Hash;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -109,4 +110,33 @@ class UserController extends Controller
         $this->user->remove($id);
         return redirect()->back();
     }
+
+    public function account()
+    {
+        if((Auth::check()) && (Auth::user()->status == 1)){
+            $user_id = Auth::user()->id;
+        }
+        $user = User::find($user_id);
+        $name = $user->name;
+        $email = $user->email;
+        return view('layout.account',compact('name','email','user_id'));
+    }
+    public function updateaccount($id, Request $request){
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if($request->oldpass != null){
+            if(Hash::check($request->oldpass, $user->password)){
+                $user->password = bcrypt($request->newpass);
+            } else {
+                return redirect()->back()->with('error', 'Mật khẩu cũ không hớp !!!')->withInput();
+            }
+        } 
+        
+        $user->save();
+        
+        return redirect()->back();
+    }
+    
+    
 }

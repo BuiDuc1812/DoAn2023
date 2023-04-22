@@ -758,13 +758,38 @@
                         </div>
 
                         <!-- Right Elements -->
+                        <style>
+                            .account-item{
+                                position: relative;
+                            }
+                            .nav-test {
+                                position: absolute;
+                                left: 0;
+                
+                                list-style: none;
+                                background-color: #FFF;
+                                display: none;
+                                transition: all 0.3s ease-in-out;
+                            }
+    
+                            .account-item:hover .nav-test{
+                                display: block;
+                            }
+                        </style>
                         <div class="flex-col hide-for-medium flex-right">
                             <ul class="header-nav header-nav-main nav nav-right  nav-divided nav-uppercase">
                                 <li class="account-item has-icon ">
                                     @if (session('account'))
-                                        <a href="{{route('customer.logout')}}" class="nav-top-link nav-top-not-logged-in">
-                                            <span>Chào, {{ session('account')->name }}</span>
-                                        </a>
+                                    <span>Chào, {{ session('account')->name }}</span>
+                                    <ul class="nav-test">
+                                        <li>
+                                            <a href="{{route('customer.logout')}}" class="nav-top-link nav-top-not-logged-in">Đăng xuất</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('customer.account')}}" class="nav-top-link nav-top-not-logged-in">Quản lí tài khoản</a>
+                                        </li>
+                                    </ul>
+                                        
                                     @else
                                         <a href="" class="nav-top-link nav-top-not-logged-in" data-open="#login-form-popup">
                                             <span> Đăng nhập </span>
