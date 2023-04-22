@@ -3,14 +3,23 @@
 @section('layout')
     <main id="main" class="">
 
-        <div class="row">
+        <div style="min-height:40vh" class="row">
             <div class="">
                 <div class="card">
                     <div class="table-responsive">
                         <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
                                
-                            <div class="dataTable-container">
-                                <table class="table table-flush dataTable-table" id="datatable-search">
+                            <div style="display:flex; justify-content:center" class="dataTable-container">
+                                @if ($ordercount==0)
+                                   
+                                    <div style="display: flex;flex-direction: column; margin-top:30px" class="continue-shopping pull-left text-left">
+                                        <span style="margin-bottom:24px;font-size:24px; line-height:30px; font-weight:400">Bạn chưa có đơn đặt hàng nào cả !!!!</span>
+                                        <a class="button-continue-shopping button primary"
+                                            href="{{ route('home') }}">
+                                            &#8592; Tiếp tục xem sản phẩm </a>
+                                    </div>
+                                @else
+                                      <table class="table table-flush dataTable-table" id="datatable-search">
                                     <thead class="thead-light">
                                         <tr>
                                             <th data-sortable="" style=""><a href="#"
@@ -67,16 +76,22 @@
                                                 <span class="my-2 text-xs">{{$item->note}}</span>
                                             </td>
                                             <td>
-                                                <a href="{{route('order.detail',$item->id)}}" class="btn">Chi tiết đơn hàng</a>
+                                                <a href="{{route('customer.orderdetails',$item->id)}}" class="btn">Chi tiết đơn hàng</a>
                                             </td> 
                                             <td>
-                                                <a href="{{route('order.detail',$item->id)}}" class="btn">Huỷ đơn dặt</a>
+                                                @if ($item->status == 0 || $item->status == 1 )
+                                                    <a href="{{route('order.detail',$item->id)}}" class="btn">Huỷ đơn dặt</a>
+                                                @endif
+                                                
                                             </td>                              
         
                                         </tr>
                                         @endforeach
                                     </tbody>
-                                </table>
+                                </table>  
+                                  
+                                @endif
+                                
                         
                             </div>
                         </div>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use PDF;
 
 use function Ramsey\Uuid\v1;
@@ -89,7 +90,10 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         $order = Order::find($id)->delete();
+        $order_details = OrderDetail::where('order_id',$id)->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
         return redirect()->back()->with('success','Xóa thành công');
     }
 
@@ -105,6 +109,14 @@ class OrderController extends Controller
             $user_id = Auth::user()->id;
         }
         $order = Order::where('user_id', $user_id)->get();
-        return view('layout.order', compact('order'));
+        $ordercount = $order->count();
+        return view('layout.order', compact('order','ordercount'));
     }
+    public function showorderdetails($id){
+        $orders = Order::find($id);
+        
+        $detail = OrderDetail::where('order_id',$id)->get();
+        return view('layout.orderdetails', compact('detail','orders'));
+    }
+
 }

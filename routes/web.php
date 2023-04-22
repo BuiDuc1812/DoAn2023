@@ -42,6 +42,7 @@ Route::post('/login',[LoginController::class,'loginCustomer'])->name('customer.l
 Route::get('/logout',[LoginController::class,'logoutCustomer'])->name('customer.logout');
 Route::get('/account',[UserController::class,'account'])->name('customer.account');
 Route::get('/order',[OrderController::class,'showorder'])->name('customer.order');
+Route::get('/order/details/{id}',[OrderController::class,'showorderdetails'])->name('customer.orderdetails');
 Route::post('/account/{id}',[UserController::class,'updateaccount'])->name('update.account');
 Route::post('/login/checkout',[LoginController::class,'loginCheckout'])->name('checkout.login');
 Route::get('/logout/checkout',[LoginController::class,'logoutCheckout'])->name('checkout.logout');
