@@ -47,6 +47,8 @@ Route::get('/order/details/delete/{orderId}/{productId}',[OrderController::class
 Route::post('/account/{id}',[UserController::class,'updateaccount'])->name('update.account');
 Route::post('/login/checkout',[LoginController::class,'loginCheckout'])->name('checkout.login');
 Route::get('/logout/checkout',[LoginController::class,'logoutCheckout'])->name('checkout.logout');
+Route::get('/fogot',[LoginController::class,'forgotpassword'])->name('forgot.pass');
+Route::post('/fogot/resetpasword',[LoginController::class,'resetpassword'])->name('reset.pass');
 
 // đăng nhập admin
 Route::get('/admin',[LoginController::class,'index'])->name('login');

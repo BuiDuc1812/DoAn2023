@@ -1175,7 +1175,8 @@
                         <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="login_password" />
                         <small class="error"></small>
                     </p>
-                    <p class="form-row">
+                    <a href="{{ route('forgot.pass') }}">Quên mật khẩu ?</a>
+                    <p style="float:right" class="form-row">
                         <button type="submit" class="woocommerce-Button button">Đăng nhập</button>
                     </p>
                 </form>
@@ -1206,7 +1207,7 @@
                         <input type="hidden" name="status" value="1">
                         <small class="error"></small>
                     </p>
-                    <p class="form-row">
+                    <p style="float:right" class="form-row">
                         <button type="submit" class="woocommerce-Button button">Đăng ký</button>
                     </p>
                 </form>

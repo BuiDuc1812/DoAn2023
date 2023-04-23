@@ -163,4 +163,19 @@ class LoginController extends Controller
         session()->forget('account');
         return redirect('/cart/checkout');
     }
+
+    public function forgotpassword(){
+        return view('layout.forgotpassword');
+    }
+
+    public function resetpassword(Request $request){
+        $email = $request->email;
+        $user = User::where('email', $email)->first();;
+        if($user != null){
+            $user->password =bcrypt($request->newpass);
+            $user->save();
+            return redirect()->back()->with('success','Mật khẩu của bạn đã được cập nhật !!!');
+        }
+        return redirect()->back()->with('error','Email không trùng khớp !!!');
+    }
 }
