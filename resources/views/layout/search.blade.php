@@ -3,10 +3,14 @@
 @section('layout')
 
     <main id="main" class="">
+        
         <div class="row category-page-row">
 
             <div class="col large-3 hide-for-medium ">
                 <div id="shop-sidebar" class="sidebar-inner col-inner">
+                    <div style="margin-bottom: 12px; font-size:20px">
+                       <b>Kết quả tìm kiếm của bạn:</b> {{ $value }}
+                    </div>
                     <aside id="nav_menu-2" class="widget widget_nav_menu"><span class="widget-title shop-sidebar">Danh mục sản phẩm</span>
                         <div class="is-divider small"></div>
                         <div class="menu-danh-muc-san-pham-vertical-menu-container">
@@ -43,13 +47,14 @@
                     </aside>
                 </div><!-- .sidebar-inner -->
             </div><!-- #shop-sidebar -->
-
             <div class="col large-9">
                 <div class="shop-container">
-                   
-                   
                     <div class="products row row-small large-columns-3 medium-columns-3 small-columns-2">
-                        @foreach ($product as $value)
+                        @if ($productcount==0)
+                            <span>Không tìm thấy sản phẩm nào phù hợp với yêu cầu của bạn !!!</span>
+
+                        @else
+                         @foreach ($product as $value)
                         <div class="product-small col has-hover post-431 product type-product status-publish has-post-thumbnail product_cat-ban-an first instock shipping-taxable purchasable product-type-simple">
                             <div class="col" data-animate="bounceInRight">
                                 <div class="col-inner">
@@ -97,6 +102,8 @@
                             </div><!-- col -->
                         </div><!-- row -->
                         @endforeach
+                        @endif
+                       
                     </div><!-- shop container -->
                     
                 </div>
