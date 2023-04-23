@@ -181,6 +181,9 @@
                                                                         method="post" id="commentform"
                                                                         class="comment-form" novalidate>
                                                                         @csrf
+                                                                        @if (Session::has('error'))
+                                                                                    <span class="error">{{ Session::get('error') }}</span>
+                                                                        @endif
                                                                         <div class="comment-form-rating"><label
                                                                                 for="rating">Đánh giá của
                                                                                 bạn</label><select name="rating"

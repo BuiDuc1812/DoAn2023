@@ -129,14 +129,16 @@ class ProductController extends Controller
     public function review($id, Request $request){
         if((Auth::check()) && (Auth::user()->status == 1)){
             $user_id = Auth::user()->id;
+            $review = new review();
+            $review->user_id = $user_id;
+            $review->product_id = $id;
+            $review->rating = $request->rating;
+            $review->desciption = $request->comment;
+            $review->save();
+            return redirect()->back();
+        } else {
+            return redirect()->back()->width('error', 'Bạn phải đăng nhập để thực hiện chức năng này !!!');
         }
-        $review = new review();
-        $review->user_id = $user_id;
-        $review->product_id = $id;
-        $review->rating = $request->rating;
-        $review->desciption = $request->comment;
-        $review->save();
-        return redirect()->back();
     }
     
     public function showreview($id){
