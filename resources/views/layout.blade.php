@@ -778,6 +778,7 @@
                         </style>
                         <div class="flex-col hide-for-medium flex-right">
                             <ul class="header-nav header-nav-main nav nav-right  nav-divided nav-uppercase">
+                                
                                 <li class="account-item has-icon ">
                                     @if (session('account'))
                                     <span>Chào, {{ session('account')->name }}</span>
@@ -931,7 +932,17 @@
                             </ul>
                         </div><!-- flex-col -->
 
-
+                        <div>
+                            <form style="margin: 0" action="{{ route('search') }}" method="GET">
+                                @csrf
+                                <div style="display:flex">
+                                    <input style="margin: 0" type="search" class="" placeholder="Nhập từ khóa tìm kiếm" name="key">
+                                
+                                        <input style="margin: 0" type="submit" value="search" class="">
+                                 
+                                </div>
+                            </form>
+                        </div>
 
                     </div><!-- .flex-row -->
                 </div><!-- .header-bottom -->

@@ -150,4 +150,12 @@ class ProductController extends Controller
         $review->delete();
         return redirect()->back();
     }
+
+    public function search(Request $request){
+        $value = $request->key;
+        $ramdomProducts = Product::inRandomOrder()->limit(6)->get();
+        $category = Category::where('name', 'LIKE', '%' . $value . '%')->first();
+        $product = Product::where('name', 'LIKE', '%' . $value . '%')->orWhere('description', 'LIKE', '%' . $value . '%')->orWhere('category_id', 'LIKE', '%' . $category->id . '%')->paginate(20);
+       return view('layout.search', compact('product','ramdomProducts'));
+    }
 }

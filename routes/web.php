@@ -49,6 +49,8 @@ Route::post('/login/checkout',[LoginController::class,'loginCheckout'])->name('c
 Route::get('/logout/checkout',[LoginController::class,'logoutCheckout'])->name('checkout.logout');
 Route::get('/fogot',[LoginController::class,'forgotpassword'])->name('forgot.pass');
 Route::post('/fogot/resetpasword',[LoginController::class,'resetpassword'])->name('reset.pass');
+Route::get('/product',[ProductController::class,'search'])->name('search');
+
 
 // đăng nhập admin
 Route::get('/admin',[LoginController::class,'index'])->name('login');
