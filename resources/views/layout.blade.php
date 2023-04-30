@@ -938,8 +938,10 @@
                                 <div style="display:flex">
                                     <input style="margin: 0" type="search" class="" placeholder="Nhập từ khóa tìm kiếm" name="key">
                                 
-                                        <input style="margin: 0" type="submit" value="search" class="">
-                                 
+                                        {{-- <input style="margin: 0" type="submit" value="search" class=""> --}}
+                                        <button style="margin: 0" type="submit"
+                                        class="ux-search-submit submit-button secondary button icon mb-0">
+                                        <i class="icon-search"></i> </button>
                                 </div>
                             </form>
                         </div>

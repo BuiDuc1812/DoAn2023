@@ -50,7 +50,7 @@
 
             <div class="container-fluid py-4">
                 <div class="row mt-4">
-                    <div class="col-xl-7">
+                    <div class="">
                         <div class="card h-100">
                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                 <div class="tab-content shadow-dark border-radius-lg" id="v-pills-tabContent">
@@ -94,25 +94,25 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex p-3 mt-2">
-                                <h6 class="my-auto">Cameras</h6>
+                                <h6 class="my-auto">Banner</h6>
                                 <div class="nav-wrapper position-relative ms-auto w-50">
                                     <ul class="nav nav-pills nav-fill p-1" role="tablist">
                                         <li class="nav-item">
                                             <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#cam1"
                                                 role="tab" aria-controls="cam1" aria-selected="true">
-                                                Kitchen
+                                                Banner1
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#cam2"
                                                 role="tab" aria-controls="cam2" aria-selected="false">
-                                                Living
+                                                Banner3
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#cam3"
                                                 role="tab" aria-controls="cam3" aria-selected="false">
-                                                Attic
+                                                Banner3
                                             </a>
                                         </li>
                                     </ul>
@@ -138,7 +138,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-5 ms-auto mt-xl-0 mt-5">
+                    {{-- <div class="col-xl-5 ms-auto mt-xl-0 mt-5">
                         <div class="card h-100">
                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                 <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
@@ -169,49 +169,48 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="row mt-4">
                     <div class="col-md-3 col-sm-6 col-6">
                         <div class="card">
                             <div class="card-body text-center">
-                                <h1 class="text-gradient text-primary"><span id="status1" countto="21">21</span>
-                                    <span class="text-lg ms-n2">°C</span></h1>
-                                <h6 class="mb-0 font-weight-bolder">Nhiệt độ</h6>
-                                <p class="opacity-8 mb-0 text-sm">Phòng khách</p>
+                                <h1 class="text-gradient text-primary"><span id="status1" countto="21">{{ $productcount }}</span>
+                                <h6 class="mb-0 font-weight-bolder">Tổng sản phẩm</h6>
+                    
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-6">
                         <div class="card">
                             <div class="card-body text-center">
-                                <h1 class="text-gradient text-primary"> <span id="status2" countto="44">44</span>
-                                    <span class="text-lg ms-n1">%</span></h1>
-                                <h6 class="mb-0 font-weight-bolder">Độ ẩm</h6>
-                                <p class="opacity-8 mb-0 text-sm">Bên ngoài</p>
+                                <h1 class="text-gradient text-primary"> <span id="status2" countto="44">{{ $ordercount }}</span>
+                                <h6 class="mb-0 font-weight-bolder">Tổng đơn hàng</h6>
+            
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-6 mt-4 mt-md-0">
                         <div class="card">
                             <div class="card-body text-center">
-                                <h1 class="text-gradient text-primary"><span id="status3" countto="87">87</span>
-                                    <span class="text-lg ms-n2">m³</span></h1>
-                                <h6 class="mb-0 font-weight-bolder">Nước</h6>
-                                <p class="opacity-8 mb-0 text-sm">Mức tiêu thụ</p>
+                                <h1 class="text-gradient text-primary"><span id="status3" countto="87">{{ $usercount }}</span>
+                                <h6 class="mb-0 font-weight-bolder">Tổng số người dùng</h6>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-6 mt-4 mt-md-0">
                         <div class="card">
                             <div class="card-body text-center">
-                                <h1 class="text-gradient text-primary"><span id="status4" countto="417">417</span>
-                                    <span class="text-lg ms-n2">GB</span></h1>
-                                <h6 class="mb-0 font-weight-bolder">Internet</h6>
-                                <p class="opacity-8 mb-0 text-sm">Tất cả kết nối</p>
+                                <h1 class="text-gradient text-primary"><span id="status4" countto="417">{{ $formattedTotalPrice }}</span>
+                                <h6 class="mb-0 font-weight-bolder">Tổng doanh thu</h6>
+                    
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="card-body text-center">
+                    dsfsdfsdf
                 </div>
             </div>
         </main>
