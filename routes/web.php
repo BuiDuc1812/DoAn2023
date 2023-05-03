@@ -71,6 +71,7 @@ Route::post('/admin',[LoginController::class,'store'])->name('login.store');
   Route::get('/print_pdf/{id}', [Ordercontroller::class, 'print_pdf']);
   Route::get('admin/home/cart/detail/{id}',[OrderManagerController::class,'show'])->name('order.detail');
   Route::resource('admin/home/user', UserController::class);
+  Route::get('/sendemail/{id}', [Ordercontroller::class, 'sendemail']);
 });
 
 //CART

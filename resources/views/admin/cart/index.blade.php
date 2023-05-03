@@ -172,6 +172,9 @@
                                                         <button type="submit" class="btn btn-danger">Xóa</button>
                                                     </form>
                                                 </td>
+                                                <td>
+                                                    <a href="{{ url('sendemail', $item->id) }}"class="btn">SendEmail</a>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
