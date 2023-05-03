@@ -62,7 +62,7 @@
                 <?php $totalOrder += $item->subtotal ?>
                <tr>
                  <td style="width:10%; ">
-                   <a href=""><img src="{{ url('uploads') }}/{{ $item->image }}" style="width:100px;" /></a>
+                   <a href=""><img src="{{ url('uploads') }}/{{ $item->product->image }}" style="width:100px;" /></a>
                  </td>
                  <td style="width:20%;margin-left:10px;text-align: center;">{{ $item->product->name }}</td>
                  <td style="width:20%;padding: 10px; text-align:center;">{{ $item->quantity }}</td>
