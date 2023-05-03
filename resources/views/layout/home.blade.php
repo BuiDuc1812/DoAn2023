@@ -72,11 +72,6 @@
                                             </div>
                                         </div>
                                         @endforeach
-                                        <style scope="scope">
-                                            #image_510626392 {
-                                                width: 100%;
-                                            }
-                                        </style>
                                 </div>
                             </div><!-- .ux-slider-wrapper -->
                         </div>
